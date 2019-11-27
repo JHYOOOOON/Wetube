@@ -4,7 +4,7 @@
     "description": "Cloning Youtube with VanillaJS and NodeJS",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "nodemon --exec babel-node index.js --delay 2"
     },
     "repository": {
         "type": "git",
@@ -16,6 +16,16 @@
     },
     "homepage": "https://github.com/YOONJHKD/Wetube#readme",
     "dependencies": {
-        "express": "^4.17.1"
+        "@babel/core": "^7.7.4",
+        "@babel/node": "^7.7.4",
+        "@babel/preset-env": "^7.7.4",
+        "body-parser": "^1.19.0",
+        "cookie-parser": "^1.4.4",
+        "express": "^4.17.1",
+        "helmet": "^3.21.2",
+        "morgan": "^1.9.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.1"
     }
 }
