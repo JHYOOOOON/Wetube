@@ -3,7 +3,7 @@ export const videos = [{
         title: 'Video awesome',
         description: 'This is something I love',
         views: 24,
-        vidoeFile: "https://archive.org/details/BigBuckBunny_124",
+        videoFile: "https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creator: {
             id: 121212,
             name: "Me",
@@ -15,7 +15,7 @@ export const videos = [{
         title: 'Video super',
         description: 'This is something I love',
         views: 24,
-        vidoeFile: "https://archive.org/details/BigBuckBunny_124",
+        videoFile: "https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creator: {
             id: 121212,
             name: "Me",
@@ -27,7 +27,7 @@ export const videos = [{
         title: 'Video hey',
         description: 'This is something I love',
         views: 24,
-        vidoeFile: "https://archive.org/details/BigBuckBunny_124",
+        videoFile: "https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creator: {
             id: 121212,
             name: "Me",
@@ -39,7 +39,7 @@ export const videos = [{
         title: 'Video go',
         description: 'This is something I love',
         views: 24,
-        vidoeFile: "https://archive.org/details/BigBuckBunny_124",
+        videoFile: "https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creator: {
             id: 121212,
             name: "Me",
@@ -51,7 +51,7 @@ export const videos = [{
         title: 'Video now',
         description: 'This is something I love',
         views: 24,
-        vidoeFile: "https://archive.org/details/BigBuckBunny_124",
+        videoFile: "https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
         creator: {
             id: 121212,
             name: "Me",
