@@ -64,12 +64,56 @@ export const postGithubLogIn = (req, res) => {
     res.redirect(routes.home);
 }
 
+export const kakaoLogin = passport.authenticate("kakao");
+
+export const kakaoLoginCallback = async(accessToken, refreshToken, profile, cb) => {
+    const {
+        _json: {
+            id,
+            properties: { profile_image: avatar_url, nickname: name },
+            kakao_account: { email }
+        }
+    } = profile;
+    try {
+        const user = await User.findOne({ email });
+        if (user) {
+            user.kakaoId = id;
+            user.save();
+            return cb(null, user);
+        }
+        const newUser = await User.create({
+            email,
+            name,
+            githubId: id,
+            avatarUrl: avatar_url
+        });
+        return cb(null, newUser);
+
+    } catch (error) {
+        return cb(error);
+    }
+};
+
+export const postKakaoLogIn = (req, res) => {
+    res.redirect(routes.home);
+}
+
 export const logout = (req, res) => {
     req.logout();
     res.redirect(routes.home);
 };
 
-export const users = (req, res) => res.render('users', { pageTitle: "Users" });
-export const userDetail = (req, res) => res.render('userDetail', { pageTitle: "User Detail" });
+export const getMe = (req, res) => {
+    res.render('userDetail', { pageTitle: "User Detail", user: req.user })
+};
+export const userDetail = async(req, res) => {
+    const { params: { id } } = req;
+    try {
+        const user = await User.findById(id);
+        res.render("userDetail", { pageTitle: "User Detail", user });
+    } catch (error) {
+        res.redirect(routes.home);
+    }
+}
 export const editProfile = (req, res) => res.render('editProfile', { pageTitle: "Edit Profile" });
 export const changePassword = (req, res) => res.render('changePassword', { pageTitle: "Change Password" });
