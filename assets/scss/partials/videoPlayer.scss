@@ -6,6 +6,7 @@
         }
     }
     video {
+        width: 100%;
         max-width: 100%;
     }
     .videoPlayer__controls {
@@ -14,7 +15,7 @@
         color: white;
         font-size: 16px;
         position: absolute;
-        bottom: 1px;
+        bottom: 10px;
         z-index: 9;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.5);
@@ -24,9 +25,35 @@
         .videoPlayer__column:first-child {
             display: flex;
             align-items: center;
-            span:first-child {
-                margin-right: 10px;
+        }
+        .videoPlayer__volume {
+            position: absolute;
+            padding: 0;
+            opacity: 1;
+            top: -60px;
+            left: -25px;
+            transform: rotate(-90deg);
+            z-index: 10;
+            width: 80px;
+            input {
+                background-color: rgba(0, 0, 0, 0.7);
+                &::-webkit-slider-runnable-track {
+                    background-color: $grey;
+                    height: 5px;
+                }
+                &::-webkit-slider-thumb {
+                    all: unset;
+                    background-color: $red;
+                    height: 15px;
+                    width: 15px;
+                    border-radius: 50%;
+                    position: relative;
+                    top: -5px;
+                }
             }
+        }
+        .videoPlayer__volumeBtn {
+            margin-right: 5px;
         }
         .videoPlayer__column:last-child {
             justify-self: end;

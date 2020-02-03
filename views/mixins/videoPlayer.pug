@@ -3,13 +3,16 @@ mixin videoPlayer(video = {})
         video(src=`/${video.src}`)
         .videoPlayer__controls
             .videoPlayer__column
-                span#jsVolumeBtn
+                input.videoPlayer__volume#jsVolume(type="range" min="0" max="1" step="0.1" value="0.5")
+                span.videoPlayer__volumeBtn#jsVolumeBtn
                     i.fas.fa-volume-up
                 span
-                    |00:00 / 10:00
+                    span#jsCurrentTime 00:00:00 
+                    span / 
+                    span#jsTotalTime 00:00:00
             .videoPlayer__column
                 span#jsPlayButton
                     i.fas.fa-play
             .videoPlayer__column
-                span
+                span#jsFullScreen
                     i.fas.fa-expand
