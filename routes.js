@@ -23,9 +23,13 @@ const DELETE_VIDEO = "/:id/delete";
 const GITHUB = "/auth/github";
 const GITHUB_CALLBACK = "/auth/github/callback";
 
-// Instagram
+// KAKAO
 const KAKAO = "/oauth/kakao";
 const KAKAO_CALLBACK = "/oauth/kakao/callback";
+
+// API
+const API = "/api";
+const REGISTER_VIEW = "/:id/view";
 
 const routes = {
     home: HOME,
@@ -70,7 +74,9 @@ const routes = {
     githubCallback: GITHUB_CALLBACK,
     me: ME,
     kakao: KAKAO,
-    kakaoCallback: KAKAO_CALLBACK
+    kakaoCallback: KAKAO_CALLBACK,
+    api: API,
+    registerView: REGISTER_VIEW
 }
 
 export default routes;
