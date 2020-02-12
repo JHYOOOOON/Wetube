@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import mongoose, { mongo } from "mongoose";
 import session from "express-session";
+import flash from "express-flash";
 import MongoStore from "connect-mongo";
 import { localsMiddleware } from "./middlewares";
 import userRouter from "./routers/userRouter";
@@ -27,12 +28,16 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-app.use(session({
+app.use(
+  session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: true,
     store: new CookieStore({ mongooseConnection: mongoose.connection })
-}));
+  })
+);
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
